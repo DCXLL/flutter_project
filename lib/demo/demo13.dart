@@ -8,25 +8,20 @@ void main() {
         appBar: AppBar(
           title: const Text("你好Flutter"),
         ),
-        body: HomeWidget()),
+        body: const HomeWidget()),
   ));
 }
 
 class HomeWidget extends StatelessWidget {
-  List list = [];
-  HomeWidget({super.key}) {
-    for (var i = 0; i < 10; i++) {
-      list.add('我是一个列表--$i');
-    }
-  }
+  const HomeWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: list.length,
-      itemBuilder: (context, index) {
-        return ListTile(
-            title: Text('${list[index]}'), trailing: const Icon(Icons.search));
-      },
-    );
+    return const Center(
+        child: CircleAvatar(
+      radius: 75,
+      backgroundImage: NetworkImage(
+          'https://www.itying.com/themes/itying/images/ionic4.png'),
+    ));
   }
 }
